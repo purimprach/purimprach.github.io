@@ -5,178 +5,374 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purimprach | Developer Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root {
-      --primary: #005b96;
-      --background: #f4f7fb;
-      --card-bg: #ffffff;
-      --text-main: #2c3e50;
-      --accent: #007acc;
+    :root{
+      --primary:#005b96;
+      --background:#f4f7fb;
+      --card-bg:#ffffff;
+      --text-main:#2c3e50;
+      --accent:#007acc;
+      --muted:#6b7a8c;
+      --line:#e8eef6;
     }
 
-    * {
-      box-sizing: border-box;
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      padding:0;
+      font-family:'Inter',sans-serif;
+      background:var(--background);
+      color:var(--text-main);
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--background);
-      color: var(--text-main);
+    header{
+      background:linear-gradient(to right,#007acc,#005b96);
+      padding:3rem 1rem 1.5rem;
+      text-align:center;
+      color:white;
+      position:relative;
     }
 
-    header {
-      background: linear-gradient(to right, #007acc, #005b96);
-      padding: 3rem 1rem 1rem;
-      text-align: center;
-      color: white;
+    header h1{
+      margin:0.25rem 0 0;
+      font-size:2rem;
+      letter-spacing:0.2px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+    header p{
+      margin:0.6rem 0 0;
+      font-size:1.05rem;
+      opacity:0.95;
     }
 
-    header p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
+    .subline{
+      margin-top:0.7rem;
+      font-size:0.95rem;
+      opacity:0.9;
     }
 
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin: 1rem auto 0;
-      object-fit: cover;
-      display: block;
-      border: 3px solid white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    .profile-img{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid white;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      display:block;
+      margin:0 auto 1rem;
     }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .cta-row{
+      margin-top:1rem;
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
     }
 
-    section {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    .cta{
+      display:inline-block;
+      padding:10px 16px;
+      border-radius:8px;
+      font-weight:600;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.35);
+      color:white;
+      background:rgba(255,255,255,0.08);
+      backdrop-filter: blur(6px);
     }
 
-    h2 {
-      color: var(--primary);
-      margin-top: 0;
+    .cta.primary{
+      background:white;
+      color:var(--primary);
+      border:1px solid white;
     }
 
-    .badge {
-      display: inline-block;
-      background: #e7f3ff;
-      color: #005b96;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin: 4px 6px 0 0;
+    main{
+      max-width:900px;
+      margin:2rem auto;
+      padding:0 1rem;
     }
 
-    .contact a {
-      color: var(--accent);
-      text-decoration: none;
+    section{
+      background:var(--card-bg);
+      border-radius:12px;
+      padding:2rem;
+      margin-bottom:2rem;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+      border:1px solid var(--line);
     }
 
-    .resume-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 10px 18px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    h2{
+      color:var(--primary);
+      margin:0 0 0.8rem;
     }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem 0;
-      font-size: 0.85rem;
-      color: #888;
+    .lead{
+      font-size:1rem;
+      line-height:1.65;
+      margin:0;
     }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: #1e1e1e;
-        color: #e0e0e0;
+    .muted{
+      color:var(--muted);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px 14px;
+      background:#fff;
+    }
+
+    .card h3{
+      margin:0 0 6px;
+      font-size:1.05rem;
+    }
+
+    .meta{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin:0 0 10px;
+    }
+
+    ul{
+      margin:0.6rem 0 0;
+      padding-left:1.2rem;
+      line-height:1.6;
+    }
+
+    .tags{
+      margin-top:10px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .badge{
+      display:inline-block;
+      background:#e7f3ff;
+      color:#005b96;
+      padding:6px 12px;
+      border-radius:20px;
+      font-size:0.85rem;
+      margin:4px 6px 0 0;
+      border:1px solid #d3e9ff;
+    }
+
+    .links{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .link-btn{
+      display:inline-block;
+      padding:9px 12px;
+      border-radius:8px;
+      border:1px solid var(--line);
+      text-decoration:none;
+      font-weight:600;
+      color:var(--accent);
+      background:#fff;
+    }
+
+    .contact a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    .resume-button{
+      display:inline-block;
+      margin-top:0.75rem;
+      padding:10px 18px;
+      background:var(--primary);
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:600;
+      box-shadow:0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    footer{
+      text-align:center;
+      padding:1.5rem 0 2rem;
+      font-size:0.85rem;
+      color:#888;
+    }
+
+    @media (min-width: 820px){
+      .grid.two{
+        grid-template-columns:1fr 1fr;
       }
-      section {
-        background: #2a2a2a;
-      }
-      .badge {
-        background: #333;
-        color: #81c9fa;
-      }
-      .resume-button {
-        background: #007acc;
-      }
+    }
+
+    @media (prefers-color-scheme: dark){
+      body{ background:#1e1e1e; color:#e0e0e0; }
+      section{ background:#2a2a2a; border-color:#333; }
+      .card{ background:#2a2a2a; border-color:#333; }
+      .badge{ background:#333; color:#81c9fa; border-color:#444; }
+      .link-btn{ background:#2a2a2a; border-color:#333; }
+      .resume-button{ background:#007acc; }
+      .muted{ color:#b5c0cf; }
+      footer{ color:#aaa; }
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <img src="picProfile.jpg" alt="Profile" style="width:130px; height:130px; border-radius:50%; border: 4px solid white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 1rem;" />
+  <img src="picProfile.jpg" alt="Profile" class="profile-img" />
+
   <h1>Purimprach Sanphichayavarakorn</h1>
-  <p>Aspiring iOS & Web Developer | Chulalongkorn University</p>
+  <p>Software Developer | iOS (SwiftUI) & Full-Stack | React, Python, SQL</p>
+  <div class="subline">Bangkok, Thailand • Open to Junior iOS / Full-Stack / Software Developer roles</div>
+
+  <div class="cta-row">
+    <a class="cta primary" href="Resume_Purimprach.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+    <a class="cta" href="https://www.linkedin.com/in/purimprach/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="cta" href="https://github.com/purimprach" target="_blank" rel="noopener">GitHub</a>
+  </div>
 </header>
 
 <main>
+
   <section>
-    <h2>About Me</h2>
-    <p>I'm a senior student in Statistics (Information Technology Major) at Chulalongkorn University. I enjoy building intuitive iOS apps and responsive websites with real-world impact. My focus areas are system design, usability, and innovation through technology.</p>
-    
+    <h2>About</h2>
+    <p class="lead">
+      I’m a Software Developer with a background in Statistics (IT for Business) from Chulalongkorn University (Second-Class Honors).
+      I build user-centric, data-driven applications across iOS (SwiftUI) and full-stack web development (React, Python, SQL).
+    </p>
+    <p class="lead" style="margin-top:0.8rem;">
+      I developed <strong>MuTeLu</strong>, a location-based iOS recommendation app (Senior Project, <strong>Grade A</strong>), and <strong>HBS</strong>, a full-stack hotel business simulation platform.
+      I was the <strong>1st Runner-up</strong> in SAS x CBS Hackathon and participated in the <strong>ICPC Asia Regional Contest</strong>.
+    </p>
   </section>
 
   <section>
     <h2>Featured Projects</h2>
-    <h3>📱 ShiServe – iOS Room Reservation App</h3>
-    <p>SwiftUI-based bilingual app for booking rooms with login, profile, and policy modules.</p>
 
-    <h3>🙏 Mu Te Lu – Spiritual Guide App</h3>
-    <p>Location-based app recommending sacred sites near Chulalongkorn University using cultural tags.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>MuTeLu — Sacred Site Recommendation System (Senior Project, Grade A)</h3>
+        <p class="meta">SwiftUI • Python • MVVM • Hybrid Recommendation</p>
+        <ul>
+          <li>Built a location-based iOS app recommending cultural and spiritual sites around Chulalongkorn University.</li>
+          <li>Implemented a hybrid recommendation approach for personalized suggestions.</li>
+          <li>Delivered a bilingual (Thai/English) user-friendly experience with bookmarking and check-ins.</li>
+        </ul>
+        <div class="links">
+          <!-- TODO: Replace # with your real repo/demo links -->
+          <a class="link-btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="link-btn" href="#" target="_blank" rel="noopener">Demo / Screenshots</a>
+        </div>
+      </div>
 
-    <h3>🤖 AI-based Recommender System</h3>
-    <p>Group project using Python to build an intelligent content recommendation engine. Scored A.</p>
+      <div class="card">
+        <h3>HBS — Hotel Business Simulation</h3>
+        <p class="meta">React.js • Supabase (PostgreSQL) • System Analysis</p>
+        <ul>
+          <li>Developed a full-stack web simulation platform to model hotel operations and decision-making across rounds.</li>
+          <li>Designed relational database schemas and implemented business-driven simulation logic.</li>
+          <li>Led system analysis: translated business requirements into technical specs, rules, and data models.</li>
+        </ul>
+        <div class="links">
+          <!-- TODO: Replace # with your real repo/demo links -->
+          <a class="link-btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+          <a class="link-btn" href="#" target="_blank" rel="noopener">Demo</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>ShiServe — iOS Room Reservation App</h3>
+        <p class="meta">SwiftUI • Firebase • Bilingual UI</p>
+        <ul>
+          <li>Built a bilingual iOS app for room reservations with authentication and user profile features.</li>
+          <li>Implemented clean SwiftUI components and smooth navigation flows.</li>
+          <li>Focused on usability, policy acknowledgment, and user-centric design.</li>
+        </ul>
+        <div class="links">
+          <!-- TODO: Replace # with your real repo/demo links -->
+          <a class="link-btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>AI-based Recommender System (Group Project, Grade A)</h3>
+        <p class="meta">Python • Similarity-based Recommendation</p>
+        <ul>
+          <li>Developed a content recommendation engine using similarity-based techniques.</li>
+          <li>Worked with data preprocessing and evaluation to improve recommendation quality.</li>
+        </ul>
+        <div class="links">
+          <!-- TODO: Replace # with your real repo link -->
+          <a class="link-btn" href="#" target="_blank" rel="noopener">GitHub Repo</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:1rem;">
+      Tip: Replace the “GitHub Repo / Demo” links above with your actual repository or demo URLs.
+    </p>
   </section>
 
   <section>
-    <h2>Skills & Interests</h2>
-    <div>
-      <span class="badge">Swift</span>
-      <span class="badge">SwiftUI</span>
-      <span class="badge">Python</span>
-      <span class="badge">HTML</span>
-      <span class="badge">JavaScript</span>
-      <span class="badge">SQL</span>
-      <span class="badge">Firebase</span>
-      <span class="badge">Figma</span>
-      <span class="badge">Git</span>
+    <h2>Skills</h2>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Core</h3>
+        <div class="tags">
+          <span class="badge">Swift</span>
+          <span class="badge">SwiftUI</span>
+          <span class="badge">iOS Development</span>
+          <span class="badge">React.js</span>
+          <span class="badge">Python</span>
+          <span class="badge">SQL</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Tools & Methods</h3>
+        <div class="tags">
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">Firebase</span>
+          <span class="badge">Supabase</span>
+          <span class="badge">Figma</span>
+          <span class="badge">System Analysis</span>
+          <span class="badge">Database Design</span>
+        </div>
+      </div>
     </div>
-    <p style="margin-top: 1rem;"><strong>Focus areas:</strong> EdTech, Health Tech, Green Tech</p>
+
+    <p class="muted" style="margin-top:1rem;">
+      Focus areas: Recommendation Systems • Business Applications • User-Centric Design
+    </p>
   </section>
 
   <section class="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:purimprach.san@gmail.com">purimprach.san@gmail.com</a></p>
-    <p>GitHub: <a href="https://purimprach.github.io/" target="_blank">github.com/purimprach</a></p>
-  <p><strong>Download Resume (Docx):</strong> 
-  <a href="Resume_Purimprach.pdf" download>Click here</a>
-</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/purimprach/" target="_blank" rel="noopener">linkedin.com/in/purimprach</a></p>
+    <p>GitHub: <a href="https://github.com/purimprach" target="_blank" rel="noopener">github.com/purimprach</a></p>
 
+    <a class="resume-button" href="Resume_Purimprach.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+
+    <p class="muted" style="margin-top:0.9rem;">
+      Awards: 1st Runner-up, SAS x CBS Hackathon Season 4 (2024) • Participant, ICPC Asia Regional Contest (2025) • AWS Educate: Introduction to Cloud 101 (Training Badge)
+    </p>
   </section>
+
 </main>
 
 <footer>
